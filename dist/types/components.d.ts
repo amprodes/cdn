@@ -21,6 +21,7 @@ export namespace Components {
     interface ChatComponent {
     }
     interface ChatFooter {
+        "hasIcons": boolean;
     }
     interface ChatHeader {
         "late": boolean;
@@ -104,6 +105,7 @@ declare namespace LocalJSX {
     interface ChatComponent {
     }
     interface ChatFooter {
+        "hasIcons"?: boolean;
     }
     interface ChatHeader {
         "late"?: boolean;

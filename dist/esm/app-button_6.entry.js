@@ -131,11 +131,13 @@ const chatFooterCss = "@charset \"UTF-8\";@font-face{font-family:\"fontello\";sr
 const ChatFooter = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
+    this.hasIcons = true;
+    this.isListening = false;
   }
   render() {
     //const footerClass = !this.isListening ? 'dav-footer' : ;
     const buttonClass = this.value ? "dav-footer__icon" : 'dav-footer__icon__inactive';
-    return (h("section", { class: 'dav-footer noPadding' }, h("app-textfield", { class: "dav-footer__textfield", placeholder: 'Mensaje' }), h("div", { class: buttonClass }, h("img", { class: 'dav-footer__icon__img-send', src: '../../assets/icons/extra-icons/icon-send-message.svg' }))));
+    return (h("section", { class: 'dav-footer noPadding' }, h("app-textfield", { class: "dav-footer__textfield", placeholder: 'Mensaje' }), h("div", { class: buttonClass }, h("img", { class: 'dav-footer__icon__img-send', src: 'assets/icons/extra-icons/icon-send-message.svg' }))));
   }
 };
 ChatFooter.style = chatFooterCss;
@@ -148,7 +150,7 @@ const ChatHeader = class {
     this.late = false;
   }
   render() {
-    return (h("div", null, h("div", { class: "dav__header" }, h("div", { class: "dav__header__left" }, h("app-button", { classButton: "backVivi" /*routerLink=".."*/ }, h("img", { src: '/assets/icons/default-icons/icon-arrow-back.svg' })), h("div", { class: "dav__header__left__icon" }, h("img", { src: "/assets/icons/extra-icons/icon-vivi-assistant.svg" })), h("p", { class: "dav__header__left__name" }, "Vivi")), h("img", { src: "/assets/icons/extra-icons/icon-config.svg", class: "dav__header__camera" }))));
+    return (h("div", null, h("div", { class: "dav__header" }, h("div", { class: "dav__header__left" }, h("app-button", { classButton: "backVivi" /*routerLink=".."*/ }, h("img", { src: 'assets/icons/default-icons/icon-arrow-back.svg' })), h("div", { class: "dav__header__left__icon" }, h("img", { src: "assets/icons/extra-icons/icon-vivi-assistant.svg" })), h("p", { class: "dav__header__left__name" }, "Vivi")), h("img", { src: "assets/icons/extra-icons/icon-config.svg", class: "dav__header__camera" }))));
   }
 };
 ChatHeader.style = chatHeaderCss;

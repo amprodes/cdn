@@ -135,11 +135,13 @@ const chatFooterCss = "@charset \"UTF-8\";@font-face{font-family:\"fontello\";sr
 const ChatFooter = class {
   constructor(hostRef) {
     index.registerInstance(this, hostRef);
+    this.hasIcons = true;
+    this.isListening = false;
   }
   render() {
     //const footerClass = !this.isListening ? 'dav-footer' : ;
     const buttonClass = this.value ? "dav-footer__icon" : 'dav-footer__icon__inactive';
-    return (index.h("section", { class: 'dav-footer noPadding' }, index.h("app-textfield", { class: "dav-footer__textfield", placeholder: 'Mensaje' }), index.h("div", { class: buttonClass }, index.h("img", { class: 'dav-footer__icon__img-send', src: '../../assets/icons/extra-icons/icon-send-message.svg' }))));
+    return (index.h("section", { class: 'dav-footer noPadding' }, index.h("app-textfield", { class: "dav-footer__textfield", placeholder: 'Mensaje' }), index.h("div", { class: buttonClass }, index.h("img", { class: 'dav-footer__icon__img-send', src: 'assets/icons/extra-icons/icon-send-message.svg' }))));
   }
 };
 ChatFooter.style = chatFooterCss;
@@ -152,7 +154,7 @@ const ChatHeader = class {
     this.late = false;
   }
   render() {
-    return (index.h("div", null, index.h("div", { class: "dav__header" }, index.h("div", { class: "dav__header__left" }, index.h("app-button", { classButton: "backVivi" /*routerLink=".."*/ }, index.h("img", { src: '/assets/icons/default-icons/icon-arrow-back.svg' })), index.h("div", { class: "dav__header__left__icon" }, index.h("img", { src: "/assets/icons/extra-icons/icon-vivi-assistant.svg" })), index.h("p", { class: "dav__header__left__name" }, "Vivi")), index.h("img", { src: "/assets/icons/extra-icons/icon-config.svg", class: "dav__header__camera" }))));
+    return (index.h("div", null, index.h("div", { class: "dav__header" }, index.h("div", { class: "dav__header__left" }, index.h("app-button", { classButton: "backVivi" /*routerLink=".."*/ }, index.h("img", { src: 'assets/icons/default-icons/icon-arrow-back.svg' })), index.h("div", { class: "dav__header__left__icon" }, index.h("img", { src: "assets/icons/extra-icons/icon-vivi-assistant.svg" })), index.h("p", { class: "dav__header__left__name" }, "Vivi")), index.h("img", { src: "assets/icons/extra-icons/icon-config.svg", class: "dav__header__camera" }))));
   }
 };
 ChatHeader.style = chatHeaderCss;
