@@ -1,0 +1,1 @@
+{"version":3,"file":"ChatMessage.interface.js","sourceRoot":"","sources":["../../../../src/components/chat-component/interfaces/ChatMessage.interface.ts"],"names":[],"mappings":"","sourcesContent":["import { Sender } from \"../enums/sender.enum\";\n\nexport default interface ChatMessage{\n    text:string,\n    hour?:string,\n    sender:Sender\n}"]}
