@@ -1,0 +1,2 @@
+import{r as t,h as e}from"./p-92f46f77.js";const o=class{constructor(e){t(this,e);this.interactions=[{text:"Hello, how can I help you?",hour:"12:00 PM"},{text:"I need assistance with my order.",hour:"12:01 PM"},{text:"Sure, let me look that up for you.",hour:"12:02 PM"}]}render(){return e("div",null,this.interactions.map((t=>e("chat-bubble",{text:t.text,hour:t.hour}))))}};export{o as chat_list};
+//# sourceMappingURL=p-049ba7cb.entry.js.map

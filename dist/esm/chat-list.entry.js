@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-daa85bb3.js';
+import { r as registerInstance, h } from './index-4a162c37.js';
 
 const ChatList = class {
   constructor(hostRef) {

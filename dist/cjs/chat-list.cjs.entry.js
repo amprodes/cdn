@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-869f7cf5.js');
+const index = require('./index-a4f926bf.js');
 
 const ChatList = class {
   constructor(hostRef) {
