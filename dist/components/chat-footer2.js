@@ -1,4 +1,4 @@
-import { proxyCustomElement, HTMLElement, h } from '@stencil/core/internal/client';
+import { proxyCustomElement, HTMLElement, h, getAssetPath } from '@stencil/core/internal/client';
 import { s as state } from './store.js';
 import { S as Sender } from './sender.enum.js';
 
@@ -22,8 +22,9 @@ const ChatFooter = /*@__PURE__*/ proxyCustomElement(class ChatFooter extends HTM
   render() {
     //const footerClass = !this.isListening ? 'dav-footer' : ;
     const buttonClass = this.value ? "dav-footer__icon" : 'dav-footer__icon__inactive';
-    return (h("form", { onSubmit: (e) => this.handleSubmit(e), class: 'dav-footer noPadding' }, h("input", { type: "text", value: this.value, onInput: (event) => this.handleChange(event) }), h("button", { class: buttonClass, type: "submit" }, h("img", { class: 'dav-footer__icon__img-send', src: '../../assets/icons/extra-icons/icon-send-message.svg' }))));
+    return (h("form", { onSubmit: (e) => this.handleSubmit(e), class: 'dav-footer noPadding' }, h("input", { type: "text", value: this.value, onInput: (event) => this.handleChange(event) }), h("button", { class: buttonClass, type: "submit" }, h("img", { class: 'dav-footer__icon__img-send', src: getAssetPath('../../assets/icons/extra-icons/icon-send-message.svg') }))));
   }
+  static get assetsDirs() { return ["assets"]; }
   static get style() { return chatFooterCss; }
 }, [1, "chat-footer", {
     "value": [32]

@@ -1,4 +1,4 @@
-import { h, } from '@stencil/core';
+import { h, getAssetPath } from '@stencil/core';
 import state from '../../store/store';
 import { Sender } from '../chat-component/enums/sender.enum';
 export class ChatFooter {
@@ -16,7 +16,7 @@ export class ChatFooter {
   render() {
     //const footerClass = !this.isListening ? 'dav-footer' : ;
     const buttonClass = this.value ? "dav-footer__icon" : 'dav-footer__icon__inactive';
-    return (h("form", { onSubmit: (e) => this.handleSubmit(e), class: 'dav-footer noPadding' }, h("input", { type: "text", value: this.value, onInput: (event) => this.handleChange(event) }), h("button", { class: buttonClass, type: "submit" }, h("img", { class: 'dav-footer__icon__img-send', src: '../../assets/icons/extra-icons/icon-send-message.svg' }))));
+    return (h("form", { onSubmit: (e) => this.handleSubmit(e), class: 'dav-footer noPadding' }, h("input", { type: "text", value: this.value, onInput: (event) => this.handleChange(event) }), h("button", { class: buttonClass, type: "submit" }, h("img", { class: 'dav-footer__icon__img-send', src: getAssetPath('../../assets/icons/extra-icons/icon-send-message.svg') }))));
   }
   static get is() { return "chat-footer"; }
   static get encapsulation() { return "shadow"; }
@@ -30,6 +30,7 @@ export class ChatFooter {
       "$": ["chat-footer.css"]
     };
   }
+  static get assetsDirs() { return ["assets"]; }
   static get states() {
     return {
       "value": {}
