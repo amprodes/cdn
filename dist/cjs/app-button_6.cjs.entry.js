@@ -312,7 +312,7 @@ const ChatHeader = class {
     this.late = false;
   }
   render() {
-    return (index.h("div", null, index.h("div", { class: "dav__header" }, index.h("div", { class: "dav__header__left" }, index.h("app-button", { classButton: "backVivi" /*routerLink=".."*/ }, index.h("img", { src: '/assets/icons/default-icons/icon-arrow-back.svg' })), index.h("div", { class: "dav__header__left__icon" }, index.h("img", { src: "/assets/icons/extra-icons/icon-vivi-assistant.svg" })), index.h("p", { class: "dav__header__left__name" }, "Vivi")), index.h("img", { src: "/assets/icons/extra-icons/icon-config.svg", class: "dav__header__camera" }))));
+    return (index.h("div", null, index.h("div", { class: "dav__header" }, index.h("div", { class: "dav__header__left" }, index.h("app-button", { classButton: "backVivi" /*routerLink=".."*/ }, index.h("img", { src: '/assets/icons/default-icons/icon-arrow-back.svg' })), index.h("div", { class: "dav__header__left__icon" }, index.h("img", { src: "./assets/icon-vivi-assistant.svg" })), index.h("p", { class: "dav__header__left__name" }, "Vivi")), index.h("img", { src: "/assets/icons/extra-icons/icon-config.svg", class: "dav__header__camera" }))));
   }
 };
 ChatHeader.style = chatHeaderCss;
