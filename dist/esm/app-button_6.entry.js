@@ -165,7 +165,7 @@ const ChatTemplate = class {
     registerInstance(this, hostRef);
   }
   render() {
-    return (h(Host, null, h("div", { class: "dav-container" }, h("div", { class: "container" }, h("div", { class: "head" }, h("slot", { name: "head" })), h("div", { class: "content" }, h("slot", { name: "content" })), h("div", { class: "footer" }, h("slot", { name: "footer" }))))));
+    return (h(Host, null, h("div", { class: "dav-container" }, h("div", { class: "container" }, h("div", { class: "head" }, h("slot", { name: "head" }, h("chat-header", null))), h("div", { class: "content" }, h("slot", { name: "content" }, h("chat-component", null))), h("div", { class: "footer" }, h("slot", { name: "footer" }, h("chat-footer", null)))))));
   }
 };
 ChatTemplate.style = chatTemplateCss;
