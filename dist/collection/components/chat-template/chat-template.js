@@ -1,30 +1,3 @@
-// import { Component, Host, h } from '@stencil/core';
-// @Component({
-//   tag: 'chat-template',
-//   styleUrl: './chat-template.scss',
-//   shadow: true,
-// })
-// export class ChatTemplate {
-//   render() {
-//     return (
-//       <Host>
-//         <div class="dav-container">
-//         <div class="container">
-//           <div class="head">
-//             <slot name="head" />
-//           </div>
-//           <div class="content">
-//             <slot name="content" />
-//           </div>
-//           <div class="footer">
-//             <slot name="footer" />
-//           </div>
-//         </div>
-//         </div>
-//       </Host>
-//     );
-//   }
-// }
 import { Host, h } from '@stencil/core';
 export class ChatTemplate {
   render() {

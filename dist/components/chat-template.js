@@ -1,6 +1,6 @@
 import { proxyCustomElement, HTMLElement, h, Host } from '@stencil/core/internal/client';
 import { d as defineCustomElement$6 } from './button.component.js';
-import { d as defineCustomElement$5 } from './textfield.component.js';
+import { d as defineCustomElement$5 } from './chat-bubble2.js';
 import { d as defineCustomElement$4 } from './chat-component2.js';
 import { d as defineCustomElement$3 } from './chat-footer2.js';
 import { d as defineCustomElement$2 } from './chat-header2.js';
@@ -22,7 +22,7 @@ function defineCustomElement$1() {
   if (typeof customElements === "undefined") {
     return;
   }
-  const components = ["chat-template", "app-button", "app-textfield", "chat-component", "chat-footer", "chat-header"];
+  const components = ["chat-template", "app-button", "chat-bubble", "chat-component", "chat-footer", "chat-header"];
   components.forEach(tagName => { switch (tagName) {
     case "chat-template":
       if (!customElements.get(tagName)) {
@@ -34,7 +34,7 @@ function defineCustomElement$1() {
         defineCustomElement$6();
       }
       break;
-    case "app-textfield":
+    case "chat-bubble":
       if (!customElements.get(tagName)) {
         defineCustomElement$5();
       }

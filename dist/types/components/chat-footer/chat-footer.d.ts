@@ -1,7 +1,6 @@
 export declare class ChatFooter {
-  private assetBaseUrl;
-  hasIcons: boolean;
-  isListening: boolean;
-  value: any;
+  value: string;
+  handleSubmit(e: any): void;
+  handleChange(event: any): void;
   render(): any;
 }

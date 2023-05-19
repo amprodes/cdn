@@ -1,5 +1,5 @@
 export declare enum Sender {
-  VIVI = "VIVI",
-  USER = "USER",
-  ADVISOR = "ADVISOR"
+  VIVI = "vivi",
+  USER = "user",
+  ADVISOR = "advisor"
 }

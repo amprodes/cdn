@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
+import { Sender } from "./components/chat-component/enums/sender.enum";
+export { Sender } from "./components/chat-component/enums/sender.enum";
 export namespace Components {
     interface AppButton {
         "buttonType": string;
@@ -18,15 +20,16 @@ export namespace Components {
         "placeholder": string;
         "textfieldAccess": string;
     }
+    interface ChatBubble {
+        "sender": Sender;
+        "text": string;
+    }
     interface ChatComponent {
     }
     interface ChatFooter {
-        "hasIcons": boolean;
     }
     interface ChatHeader {
         "late": boolean;
-    }
-    interface ChatList {
     }
     interface ChatTemplate {
     }
@@ -48,6 +51,12 @@ declare global {
         prototype: HTMLAppTextfieldElement;
         new (): HTMLAppTextfieldElement;
     };
+    interface HTMLChatBubbleElement extends Components.ChatBubble, HTMLStencilElement {
+    }
+    var HTMLChatBubbleElement: {
+        prototype: HTMLChatBubbleElement;
+        new (): HTMLChatBubbleElement;
+    };
     interface HTMLChatComponentElement extends Components.ChatComponent, HTMLStencilElement {
     }
     var HTMLChatComponentElement: {
@@ -66,12 +75,6 @@ declare global {
         prototype: HTMLChatHeaderElement;
         new (): HTMLChatHeaderElement;
     };
-    interface HTMLChatListElement extends Components.ChatList, HTMLStencilElement {
-    }
-    var HTMLChatListElement: {
-        prototype: HTMLChatListElement;
-        new (): HTMLChatListElement;
-    };
     interface HTMLChatTemplateElement extends Components.ChatTemplate, HTMLStencilElement {
     }
     var HTMLChatTemplateElement: {
@@ -81,10 +84,10 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-button": HTMLAppButtonElement;
         "app-textfield": HTMLAppTextfieldElement;
+        "chat-bubble": HTMLChatBubbleElement;
         "chat-component": HTMLChatComponentElement;
         "chat-footer": HTMLChatFooterElement;
         "chat-header": HTMLChatHeaderElement;
-        "chat-list": HTMLChatListElement;
         "chat-template": HTMLChatTemplateElement;
     }
 }
@@ -102,25 +105,26 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "textfieldAccess"?: string;
     }
+    interface ChatBubble {
+        "sender"?: Sender;
+        "text"?: string;
+    }
     interface ChatComponent {
     }
     interface ChatFooter {
-        "hasIcons"?: boolean;
     }
     interface ChatHeader {
         "late"?: boolean;
-    }
-    interface ChatList {
     }
     interface ChatTemplate {
     }
     interface IntrinsicElements {
         "app-button": AppButton;
         "app-textfield": AppTextfield;
+        "chat-bubble": ChatBubble;
         "chat-component": ChatComponent;
         "chat-footer": ChatFooter;
         "chat-header": ChatHeader;
-        "chat-list": ChatList;
         "chat-template": ChatTemplate;
     }
 }
@@ -130,10 +134,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-button": LocalJSX.AppButton & JSXBase.HTMLAttributes<HTMLAppButtonElement>;
             "app-textfield": LocalJSX.AppTextfield & JSXBase.HTMLAttributes<HTMLAppTextfieldElement>;
+            "chat-bubble": LocalJSX.ChatBubble & JSXBase.HTMLAttributes<HTMLChatBubbleElement>;
             "chat-component": LocalJSX.ChatComponent & JSXBase.HTMLAttributes<HTMLChatComponentElement>;
             "chat-footer": LocalJSX.ChatFooter & JSXBase.HTMLAttributes<HTMLChatFooterElement>;
             "chat-header": LocalJSX.ChatHeader & JSXBase.HTMLAttributes<HTMLChatHeaderElement>;
-            "chat-list": LocalJSX.ChatList & JSXBase.HTMLAttributes<HTMLChatListElement>;
             "chat-template": LocalJSX.ChatTemplate & JSXBase.HTMLAttributes<HTMLChatTemplateElement>;
         }
     }

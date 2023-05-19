@@ -1,16 +1,69 @@
-import { h } from '@stencil/core';
-export class ChatList {
+import { Host, h } from '@stencil/core';
+import { Sender } from '../chat-component/enums/sender.enum';
+export class ChatBubble {
   constructor() {
-    this.interactions = [
-      { text: 'Hello, how can I help you?', hour: '12:00 PM' },
-      { text: 'I need assistance with my order.', hour: '12:01 PM' },
-      { text: 'Sure, let me look that up for you.', hour: '12:02 PM' }
-    ];
+    this.text = 'Message';
+    this.sender = Sender.VIVI;
   }
   render() {
-    return (h("div", null, this.interactions.map(interaction => (h("chat-bubble", { text: interaction.text, hour: interaction.hour })))));
+    return (h(Host, null, h("div", { class: 'dav-chatBubble__' + this.sender }, h("div", { class: 'dav-chatBubble__' + this.sender + 'Bubble' }, h("p", { class: "dav-chatBubble__text" }, this.text)))));
   }
-  static get is() { return "chat-list"; }
+  static get is() { return "chat-bubble"; }
   static get encapsulation() { return "shadow"; }
+  static get originalStyleUrls() {
+    return {
+      "$": ["./chat-bubble.scss"]
+    };
+  }
+  static get styleUrls() {
+    return {
+      "$": ["chat-bubble.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "text": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "attribute": "text",
+        "reflect": false,
+        "defaultValue": "'Message'"
+      },
+      "sender": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "Sender",
+          "resolved": "Sender.ADVISOR | Sender.USER | Sender.VIVI",
+          "references": {
+            "Sender": {
+              "location": "import",
+              "path": "../chat-component/enums/sender.enum"
+            }
+          }
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "attribute": "sender",
+        "reflect": false,
+        "defaultValue": "Sender.VIVI"
+      }
+    };
+  }
 }
 //# sourceMappingURL=chat-bubble.js.map

@@ -627,6 +627,6 @@ body {
   display: block;
 }
 
-.chat {
-  padding-top: 16px;
+.chat-component__initial-margin {
+  margin-top: 16px;
 }

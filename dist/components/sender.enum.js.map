@@ -1,0 +1,1 @@
+{"file":"sender.enum.js","mappings":"IAAY;AAAZ,WAAY,MAAM;EACd,uBAAa,CAAA;EACb,uBAAa,CAAA;EACb,6BAAmB,CAAA;AACrB,CAAC,EAJS,MAAM,KAAN,MAAM;;;;","names":[],"sources":["./src/components/chat-component/enums/sender.enum.ts"],"sourcesContent":["export enum Sender{\n    VIVI = 'vivi',\n    USER = 'user',\n    ADVISOR = 'advisor'\n  }\n  "],"version":3}
