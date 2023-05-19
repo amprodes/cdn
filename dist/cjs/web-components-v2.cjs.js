@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-f3ab7151.js');
+const index = require('./index-64096c0d.js');
 
 /*
  Stencil Client Patch Browser v3.2.2 | MIT Licensed | https://stenciljs.com
