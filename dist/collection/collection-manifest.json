@@ -1,0 +1,19 @@
+{
+  "entries": [
+    "./components/chat-bubble/chat-bubble.js",
+    "./components/chat-component/chat-component.js",
+    "./components/chat-footer/chat-footer.js",
+    "./components/chat-header/chat-header.js",
+    "./components/chat-template/chat-template.js",
+    "./components/dav-chip-item/dav-chip-item.js",
+    "./components/dav-chip-list/dav-chip-list.js",
+    "./shared/components/button/button.component.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "3.2.2",
+    "typescriptVersion": "4.9.5"
+  },
+  "collections": [],
+  "bundles": []
+}
