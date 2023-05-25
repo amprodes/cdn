@@ -5,38 +5,87 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "./stencil-public-runtime";
-import { Sender } from "./components/chat-component/enums/sender.enum";
-export { Sender } from "./components/chat-component/enums/sender.enum";
+import { Sender } from "./components/chat-component/enums/sender";
+export { Sender } from "./components/chat-component/enums/sender";
 export namespace Components {
     interface AppButton {
+        /**
+          * The type of the button.
+          * @prop {string} buttonType - The type attribute of the button. Defaults to 'button'.
+         */
         "buttonType": string;
+        /**
+          * The CSS class for the button.
+          * @prop {string} classButton - The class name of the button. Defaults to 'primary'.
+         */
         "classButton": string;
+        /**
+          * Indicates whether the button is disabled.
+          * @prop {boolean} disabled - Set to `true` to disable the button, `false` otherwise. Defaults to `false`.
+         */
         "disabled": boolean;
     }
-    interface AppTextfield {
-        "error": boolean | null;
-        "label": string;
-        "maxlength": number;
-        "placeholder": string;
-        "textfieldAccess": string;
-    }
+    /**
+     * Represents a chat bubble component.
+     */
     interface ChatBubble {
+        /**
+          * The sender of the chat bubble.
+         */
         "sender": Sender;
+        /**
+          * The text content of the chat bubble.
+         */
         "text": string;
     }
+    /**
+     * Represents the chat component.
+     */
     interface ChatComponent {
     }
+    /**
+     * Component representing the chat footer.
+     */
     interface ChatFooter {
     }
     interface ChatHeader {
+        /**
+          * Indicates whether the chat is late or not.
+          * @prop {boolean} late - Set to `true` if the chat is late, `false` otherwise. Defaults to `false`.
+         */
         "late": boolean;
+        /**
+          * The name displayed in the chat header.
+          * @prop {string} name - The name to be displayed. Defaults to 'Vivi'.
+         */
+        "name": string;
     }
     interface ChatTemplate {
     }
-}
-export interface AppTextfieldCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAppTextfieldElement;
+    interface DavChipItem {
+        /**
+          * Indicates whether the chip item should be wrapped.
+          * @prop {boolean} isWraped - Set to `true` if the chip item should be wrapped, `false` otherwise. Defaults to `true`.
+         */
+        "isWraped": boolean;
+        /**
+          * Indicates whether the chip item is an option for a bubble.
+          * @prop {boolean} optionForBubble - Set to `true` if the chip item is an option for a bubble, `false` otherwise. Defaults to `false`.
+         */
+        "optionForBubble": boolean;
+        /**
+          * The text displayed on the chip item.
+          * @prop {string} text - The text to be displayed.
+         */
+        "text": string;
+    }
+    interface DavChipList {
+        /**
+          * Indicates whether the chips should be wrapped.
+          * @prop {boolean} wrapChips - Set to `true` to wrap the chips, `false` otherwise. Defaults to `false`.
+         */
+        "wrapChips": boolean;
+    }
 }
 declare global {
     interface HTMLAppButtonElement extends Components.AppButton, HTMLStencilElement {
@@ -45,24 +94,27 @@ declare global {
         prototype: HTMLAppButtonElement;
         new (): HTMLAppButtonElement;
     };
-    interface HTMLAppTextfieldElement extends Components.AppTextfield, HTMLStencilElement {
-    }
-    var HTMLAppTextfieldElement: {
-        prototype: HTMLAppTextfieldElement;
-        new (): HTMLAppTextfieldElement;
-    };
+    /**
+     * Represents a chat bubble component.
+     */
     interface HTMLChatBubbleElement extends Components.ChatBubble, HTMLStencilElement {
     }
     var HTMLChatBubbleElement: {
         prototype: HTMLChatBubbleElement;
         new (): HTMLChatBubbleElement;
     };
+    /**
+     * Represents the chat component.
+     */
     interface HTMLChatComponentElement extends Components.ChatComponent, HTMLStencilElement {
     }
     var HTMLChatComponentElement: {
         prototype: HTMLChatComponentElement;
         new (): HTMLChatComponentElement;
     };
+    /**
+     * Component representing the chat footer.
+     */
     interface HTMLChatFooterElement extends Components.ChatFooter, HTMLStencilElement {
     }
     var HTMLChatFooterElement: {
@@ -81,51 +133,117 @@ declare global {
         prototype: HTMLChatTemplateElement;
         new (): HTMLChatTemplateElement;
     };
+    interface HTMLDavChipItemElement extends Components.DavChipItem, HTMLStencilElement {
+    }
+    var HTMLDavChipItemElement: {
+        prototype: HTMLDavChipItemElement;
+        new (): HTMLDavChipItemElement;
+    };
+    interface HTMLDavChipListElement extends Components.DavChipList, HTMLStencilElement {
+    }
+    var HTMLDavChipListElement: {
+        prototype: HTMLDavChipListElement;
+        new (): HTMLDavChipListElement;
+    };
     interface HTMLElementTagNameMap {
         "app-button": HTMLAppButtonElement;
-        "app-textfield": HTMLAppTextfieldElement;
         "chat-bubble": HTMLChatBubbleElement;
         "chat-component": HTMLChatComponentElement;
         "chat-footer": HTMLChatFooterElement;
         "chat-header": HTMLChatHeaderElement;
         "chat-template": HTMLChatTemplateElement;
+        "dav-chip-item": HTMLDavChipItemElement;
+        "dav-chip-list": HTMLDavChipListElement;
     }
 }
 declare namespace LocalJSX {
     interface AppButton {
+        /**
+          * The type of the button.
+          * @prop {string} buttonType - The type attribute of the button. Defaults to 'button'.
+         */
         "buttonType"?: string;
+        /**
+          * The CSS class for the button.
+          * @prop {string} classButton - The class name of the button. Defaults to 'primary'.
+         */
         "classButton"?: string;
+        /**
+          * Indicates whether the button is disabled.
+          * @prop {boolean} disabled - Set to `true` to disable the button, `false` otherwise. Defaults to `false`.
+         */
         "disabled"?: boolean;
     }
-    interface AppTextfield {
-        "error"?: boolean | null;
-        "label"?: string;
-        "maxlength"?: number;
-        "onChangeValue"?: (event: AppTextfieldCustomEvent<string>) => void;
-        "placeholder"?: string;
-        "textfieldAccess"?: string;
-    }
+    /**
+     * Represents a chat bubble component.
+     */
     interface ChatBubble {
+        /**
+          * The sender of the chat bubble.
+         */
         "sender"?: Sender;
+        /**
+          * The text content of the chat bubble.
+         */
         "text"?: string;
     }
+    /**
+     * Represents the chat component.
+     */
     interface ChatComponent {
     }
+    /**
+     * Component representing the chat footer.
+     */
     interface ChatFooter {
     }
     interface ChatHeader {
+        /**
+          * Indicates whether the chat is late or not.
+          * @prop {boolean} late - Set to `true` if the chat is late, `false` otherwise. Defaults to `false`.
+         */
         "late"?: boolean;
+        /**
+          * The name displayed in the chat header.
+          * @prop {string} name - The name to be displayed. Defaults to 'Vivi'.
+         */
+        "name"?: string;
     }
     interface ChatTemplate {
     }
+    interface DavChipItem {
+        /**
+          * Indicates whether the chip item should be wrapped.
+          * @prop {boolean} isWraped - Set to `true` if the chip item should be wrapped, `false` otherwise. Defaults to `true`.
+         */
+        "isWraped"?: boolean;
+        /**
+          * Indicates whether the chip item is an option for a bubble.
+          * @prop {boolean} optionForBubble - Set to `true` if the chip item is an option for a bubble, `false` otherwise. Defaults to `false`.
+         */
+        "optionForBubble"?: boolean;
+        /**
+          * The text displayed on the chip item.
+          * @prop {string} text - The text to be displayed.
+         */
+        "text"?: string;
+    }
+    interface DavChipList {
+        /**
+          * Indicates whether the chips should be wrapped.
+          * @prop {boolean} wrapChips - Set to `true` to wrap the chips, `false` otherwise. Defaults to `false`.
+         */
+        "wrapChips"?: boolean;
+    }
     interface IntrinsicElements {
         "app-button": AppButton;
-        "app-textfield": AppTextfield;
         "chat-bubble": ChatBubble;
         "chat-component": ChatComponent;
         "chat-footer": ChatFooter;
         "chat-header": ChatHeader;
         "chat-template": ChatTemplate;
+        "dav-chip-item": DavChipItem;
+        "dav-chip-list": DavChipList;
     }
 }
 export { LocalJSX as JSX };
@@ -133,12 +251,22 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-button": LocalJSX.AppButton & JSXBase.HTMLAttributes<HTMLAppButtonElement>;
-            "app-textfield": LocalJSX.AppTextfield & JSXBase.HTMLAttributes<HTMLAppTextfieldElement>;
+            /**
+             * Represents a chat bubble component.
+             */
             "chat-bubble": LocalJSX.ChatBubble & JSXBase.HTMLAttributes<HTMLChatBubbleElement>;
+            /**
+             * Represents the chat component.
+             */
             "chat-component": LocalJSX.ChatComponent & JSXBase.HTMLAttributes<HTMLChatComponentElement>;
+            /**
+             * Component representing the chat footer.
+             */
             "chat-footer": LocalJSX.ChatFooter & JSXBase.HTMLAttributes<HTMLChatFooterElement>;
             "chat-header": LocalJSX.ChatHeader & JSXBase.HTMLAttributes<HTMLChatHeaderElement>;
             "chat-template": LocalJSX.ChatTemplate & JSXBase.HTMLAttributes<HTMLChatTemplateElement>;
+            "dav-chip-item": LocalJSX.DavChipItem & JSXBase.HTMLAttributes<HTMLDavChipItemElement>;
+            "dav-chip-list": LocalJSX.DavChipList & JSXBase.HTMLAttributes<HTMLDavChipListElement>;
         }
     }
 }

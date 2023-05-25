@@ -193,15 +193,11 @@ const createStore = (defaultState, shouldUpdate) => {
 
 const initialState = {
   messages: [],
+  isMobile: true,
+  isWritting: false
 };
 const { state, onChange } = createStore(initialState);
-//const response = await fetch('https://api.example.com/users');
-//const messages = await response.json();
-onChange('messages', (messages) => {
-  console.log('holi', messages);
-  //[{ text: "¡Hola! Soy Vivi, la asistente virtual de Davivienda.", sender: Sender.VIVI }, { text: "Si tiene clave virtual, ingrese con ella para recibir atención personalizada.", sender: Sender.VIVI }, { text: "¿En qué le puedo ayudar?", sender: Sender.VIVI }]
-});
 
-export { state as s };
+export { onChange as o, state as s };
 
 //# sourceMappingURL=store.js.map

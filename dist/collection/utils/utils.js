@@ -1,4 +1,7 @@
 export function format(first, middle, last) {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
+  const hasFirst = Boolean(first);
+  const hasMiddle = Boolean(middle);
+  const hasLast = Boolean(last);
+  return (hasFirst ? first + ' ' : '') + (hasMiddle ? middle + ' ' : '') + (hasLast ? last : '');
 }
 //# sourceMappingURL=utils.js.map

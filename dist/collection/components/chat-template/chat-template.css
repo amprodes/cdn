@@ -635,33 +635,37 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "head" "contenido" "footer";
+  display: flex;
   width: 100%;
   height: 100vh;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .head {
-  grid-area: head;
   height: fit-content;
+  width: 100%;
+  position: fixed;
+  max-width: 538px;
+  z-index: 1;
 }
 
 .content {
   position: relative;
-  grid-area: contenido;
-  height: calc(100vh - 100px);
   min-width: 100%;
   padding: 0;
   overflow-y: auto;
+  max-width: 538px;
+  margin-top: 48px;
 }
 
 .footer {
-  grid-area: footer;
   background-color: transparent;
   padding: 0;
+  position: relative;
+  bottom: 16px;
+  width: 100%;
+  max-width: 538px;
+  margin-top: 16px;
 }

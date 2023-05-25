@@ -1,5 +1,8 @@
 import { Host, h } from '@stencil/core';
-import { Sender } from '../chat-component/enums/sender.enum';
+import { Sender } from '../chat-component/enums/sender';
+/**
+ * Represents a chat bubble component.
+ */
 export class ChatBubble {
   constructor() {
     this.text = 'Message';
@@ -34,7 +37,7 @@ export class ChatBubble {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": ""
+          "text": "The text content of the chat bubble."
         },
         "attribute": "text",
         "reflect": false,
@@ -49,7 +52,7 @@ export class ChatBubble {
           "references": {
             "Sender": {
               "location": "import",
-              "path": "../chat-component/enums/sender.enum"
+              "path": "../chat-component/enums/sender"
             }
           }
         },
@@ -57,7 +60,7 @@ export class ChatBubble {
         "optional": false,
         "docs": {
           "tags": [],
-          "text": ""
+          "text": "The sender of the chat bubble."
         },
         "attribute": "sender",
         "reflect": false,

@@ -631,8 +631,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
-  padding: 0 8px;
+  margin-top: 16px;
 }
 .dav-footer__textfield {
   width: 100%;
@@ -660,6 +659,10 @@ body {
 }
 .dav-footer__icon__inactive {
   background-color: #D1D5E0;
+  pointer-events: none;
+}
+.dav__full-width {
+  width: 100%;
 }
 .dav__equalizer {
   width: 60px;
@@ -668,4 +671,71 @@ body {
 
 .noPadding {
   padding-bottom: 0px;
+}
+
+.padding-x {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.dav-textField, .dav-textField__disabled {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #D1D5E0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #404040;
+  font-size: clamp(1.2em, 1vw + 0.6em, 1.4em);
+  font-weight: 400;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+.dav-textField:-ms-reveal, .dav-textField__disabled:-ms-reveal, .dav-textField:-ms-clear, .dav-textField__disabled:-ms-clear {
+  display: none;
+}
+
+.dav-textField, .dav-textField__disabled {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.dav-textField input, .dav-textField__disabled input {
+  border: none;
+  background-color: transparent;
+  flex: 1;
+}
+.dav-textField input:focus, .dav-textField__disabled input:focus {
+  outline: none;
+}
+.dav-textField input::placeholder, .dav-textField__disabled input::placeholder {
+  color: #9D9D9D;
+}
+.dav-textField input:disabled, .dav-textField__disabled input:disabled {
+  cursor: not-allowed;
+}
+.dav-textField__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+.dav-textField__button img {
+  display: inline-block;
+  width: auto;
+}
+.dav-textField__disabled {
+  background-color: #F7F7F7;
+  color: #9D9D9D;
+  cursor: not-allowed;
+  border: 1px solid #EDEDED;
+}
+.dav-textField__focused {
+  border: 1px solid #AAB1BC;
+}
+.dav-textField__error {
+  border: 1px solid #B70412;
 }

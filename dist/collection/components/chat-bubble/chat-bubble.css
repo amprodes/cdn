@@ -682,23 +682,20 @@ body {
   padding: 8px;
 }
 .dav-chatBubble__userBubble {
-  margin-right: 8px;
   background-color: #D1D5E0;
   border-radius: 8px 8px 0px 8px;
   position: relative;
   overflow-wrap: break-word;
 }
 .dav-chatBubble__viviBubble, .dav-chatBubble__advisorBubble, .dav-chatBubble__TypingBubble {
-  margin-left: 8px;
   background-color: white;
   border-radius: 8px 8px 8px 0px;
   position: relative;
 }
 .dav-chatBubble__TypingBubble {
   min-height: 32px;
-  padding-bottom: 0;
   width: auto;
-  padding: 10px 24px;
+  padding: 10px 24px 0 24px;
 }
 .dav-chatBubble__advisorBubble {
   display: flex;

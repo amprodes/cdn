@@ -1,1 +1,1 @@
-export declare function format(first: string, middle: string, last: string): string;
+export declare function format(first: string | undefined, middle: string | undefined, last: string | undefined): string;

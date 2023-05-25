@@ -14,6 +14,10 @@ const ButtonComponent = /*@__PURE__*/ proxyCustomElement(class ButtonComponent e
     this.mouseX = 0;
     this.showEffect = false;
   }
+  /**
+   * Sets the position of the button effect based on the mouse event.
+   * @param {MouseEvent} e - The mouse event.
+   */
   setPosition(e) {
     this.showEffect = false;
     this.mouseY = e.offsetY;
@@ -23,9 +27,9 @@ const ButtonComponent = /*@__PURE__*/ proxyCustomElement(class ButtonComponent e
     }, 1000);
   }
   render() {
-    return (h("div", { class: 'dav-buttonContainer' + (this.classButton === 'iconSmall' ? '--row' : '') }, h("button", { class: 'dav-button--' + this.classButton, type: this.buttonType, disabled: this.disabled, name: "button", onClick: (e) => this.setPosition(e) }, h("slot", null), h("slot", { name: "icon" }), this.showEffect && this.classButton != 'iconSimple' && this.classButton != 'back' &&
+    return (h("div", { class: `dav-buttonContainer${this.classButton === 'iconSmall' ? '--row' : ''}` }, h("button", { class: `dav-button--${this.classButton}`, type: this.buttonType, disabled: this.disabled, name: "button", onClick: this.setPosition }, h("slot", null), h("slot", { name: "icon" }), this.showEffect && this.classButton !== 'iconSimple' && this.classButton !== 'back' &&
       h("span", { class: "dav-button__ripple", style: { '--mouse-y': this.mouseY + 'px', '--mouse-x': this.mouseX + 'px' } })), (this.classButton === 'iconSmall' || this.classButton === 'iconLarge' || this.classButton === 'iconLargeGrey') &&
-      h("div", { class: 'dav-button__text' + (this.classButton === 'iconSmall' ? '--small' : '') }, h("slot", { name: "iconText" }))));
+      h("div", { class: `dav-button__text${this.classButton === 'iconSmall' ? '--small' : ''}` }, h("slot", { name: "iconText" }))));
   }
   static get style() { return buttonComponentCss; }
 }, [1, "app-button", {
