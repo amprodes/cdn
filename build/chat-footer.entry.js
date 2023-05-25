@@ -90,7 +90,7 @@ const ChatFooter = class {
   }
   render() {
     const buttonClass = this.value !== '' ? 'dav-footer__icon' : 'dav-footer__icon__inactive';
-    return (h("div", { class: "padding-x" }, this.showChips() && (h("dav-chip-list", null, h("dav-chip-item", { text: "Desbloquear mi clave virtual" }))), h("form", { onSubmit: this.handleSubmit, class: "dav-footer noPadding" }, h("div", { class: "dav-textField" }, h("input", { autoComplete: "off", type: "text", value: this.value, placeholder: "Mensaje", onFocus: this.handleFocus, onBlur: this.handleBlur, onInput: this.handleChange })), h("button", { class: buttonClass, type: "submit" }, h("img", { class: "dav-footer__icon__img-send", src: getAssetPath(`../../assets/icons/extra-icons/icon-send-message.svg`) })))));
+    return (h("div", { class: "padding-x" }, this.showChips() && (h("dav-chip-list", null, h("dav-chip-item", { text: "Desbloquear mi clave virtual" }))), h("form", { onSubmit: this.handleSubmit, class: "dav-footer noPadding" }, h("div", { class: "dav-textField" }, h("input", { autoComplete: "off", type: "text", value: this.value, placeholder: "Mensaje", onFocus: this.handleFocus, onBlur: this.handleBlur, onInput: this.handleChange })), h("button", { class: buttonClass, type: "submit" }, h("img", { class: "dav-footer__icon__img-send", src: getAssetPath(`./assets/icons/extra-icons/icon-send-message.svg`) })))));
   }
   static get assetsDirs() { return ["assets"]; }
 };
