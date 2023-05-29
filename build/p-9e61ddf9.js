@@ -1,5 +1,5 @@
-import { B as BUILD, c as consoleDevInfo, p as plt, w as win, H, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-e2b95d1f.js';
-export { s as setNonce } from './index-e2b95d1f.js';
+import { B as BUILD, c as consoleDevInfo, p as plt, w as win, H, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-5a263656.js';
+export { s as setNonce } from './index-5a263656.js';
 import { g as globalScripts } from './app-globals-0f993ce5.js';
 
 /*
@@ -157,5 +157,5 @@ const patchCloneNodeFix = (HTMLElementPrototype) => {
 
 patchBrowser().then(options => {
   globalScripts();
-  return bootstrapLazy([["chat-footer",[[1,"chat-footer",{"value":[32],"isElementVisible":[32]}]]],["chat-component",[[1,"chat-component",{"messages":[32],"isElementVisible":[32],"componentWidth":[32],"componentHeight":[32]}]]],["app-button",[[1,"app-button",{"classButton":[1,"class-button"],"disabled":[4],"buttonType":[1,"button-type"],"mouseY":[32],"mouseX":[32],"showEffect":[32]}]]],["chat-header",[[1,"chat-header",{"late":[4],"name":[1]}]]],["chat-bubble",[[1,"chat-bubble",{"text":[1],"sender":[1]}]]],["dav-chip-item",[[1,"dav-chip-item",{"optionForBubble":[4,"option-for-bubble"],"isWraped":[4,"is-wraped"],"text":[1]}]]],["dav-chip-list",[[1,"dav-chip-list",{"wrapChips":[4,"wrap-chips"]}]]],["chat-template",[[1,"chat-template"]]]], options);
+  return bootstrapLazy([["chat-footer",[[1,"chat-footer",{"value":[32],"isElementVisible":[32],"keyboard":[32]}]]],["chat-component",[[1,"chat-component",{"messages":[32],"isElementVisible":[32]}]]],["app-button",[[1,"app-button",{"classButton":[1,"class-button"],"disabled":[4],"buttonType":[1,"button-type"],"mouseY":[32],"mouseX":[32],"showEffect":[32]}]]],["chat-header",[[1,"chat-header",{"late":[4],"name":[1]}]]],["chat-bubble",[[1,"chat-bubble",{"text":[1],"sender":[1]}]]],["dav-chip-item",[[1,"dav-chip-item",{"optionForBubble":[4,"option-for-bubble"],"isWraped":[4,"is-wraped"],"text":[1]}]]],["dav-chip-list",[[1,"dav-chip-list",{"wrapChips":[4,"wrap-chips"]}]]],["chat-template",[[1,"chat-template"]]]], options);
 });
